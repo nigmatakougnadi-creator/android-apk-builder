@@ -1,112 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#F5F5F5">
+package com.example.sampleapp
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.sampleapp.ui.theme.SampleAppTheme
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NYGMA Relais SMS"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#333333"/>
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            SampleAppTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    Greeting("Android")
+                }
+            }
+        }
+    }
+}
 
-        <TextView
-            android:id="@+id/status_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="⚠️ En attente de configuration"
-            android:textColor="#FF9800"
-            android:textStyle="bold"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"/>
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
+}
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/endpoint_field"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Adresse du relais (URL)" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/token_field"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Jeton de l'appareil" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/device_field"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nom de l'appareil (ex: CAISSE 1)" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/operator_field"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Réseau (ex: mixx ou flooz)" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/save_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ENREGISTRER ET ACTIVER"
-            android:backgroundTint="#1E7E34"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="16dp"/>
-
-        <Button
-            android:id="@+id/btn_sms_permission"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1. AUTORISER LA LECTURE DES SMS"
-            android:backgroundTint="#E0E0E0"
-            android:textColor="#333333"
-            android:layout_marginBottom="8dp"/>
-
-        <Button
-            android:id="@+id/btn_battery"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2. DÉSACTIVER L'ÉCONOMIE DE BATTERIE"
-            android:backgroundTint="#E0E0E0"
-            android:textColor="#333333"
-            android:layout_marginBottom="8dp"/>
-
-        <Button
-            android:id="@+id/btn_autostart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3. DÉMARRAGE AUTOMATIQUE (XIAOMI)"
-            android:backgroundTint="#E0E0E0"
-            android:textColor="#333333"
-            android:layout_marginBottom="16dp"/>
-
-    </LinearLayout>
-</ScrollView>
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    SampleAppTheme {
+        Greeting("Android")
+    }
+}
