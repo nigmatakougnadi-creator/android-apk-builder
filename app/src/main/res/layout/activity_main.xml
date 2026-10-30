@@ -1,47 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+[30/10/2026 12:42] Abel: <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
-    tools:context=".MainActivity">
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_message"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/primary_text"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/clickButton"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="@string/click_me"
-        android:textSize="18sp"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="@color/button_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NYGMA Relais SMS"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"/>
 
-    <TextView
-        android:id="@+id/countText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/initial_count"
-        android:textSize="16sp"
-        android:textColor="@color/secondary_text"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clickButton" />
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚠️ En attente de configuration"
+            android:textColor="#FF9800"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/endpoint_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Adresse du relais (URL)" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/token_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Jeton de l'appareil" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/device_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom de l'appareil (ex: CAISSE 1)" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/operator_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Réseau (ex: mixx ou flooz)" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ENREGISTRER ET ACTIVER"
+            android:backgroundTint="#1E7E34"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btn_sms_permission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. AUTORISER LA LECTURE DES SMS"
+            android:backgroundTint="#E0E0E0"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp"/>
+[30/10/2026 12:42] Abel: <Button
+            android:id="@+id/btn_battery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. DÉSACTIVER L'ÉCONOMIE DE BATTERIE"
+            android:backgroundTint="#E0E0E0"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btn_autostart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. DÉMARRAGE AUTOMATIQUE (XIAOMI)"
+            android:backgroundTint="#E0E0E0"
+            android:textColor="#333333"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
