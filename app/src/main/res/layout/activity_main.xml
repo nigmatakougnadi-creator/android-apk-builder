@@ -1,4 +1,4 @@
-[30/10/2026 12:42] Abel: <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -58,7 +58,7 @@
                 android:id="@+id/device_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nom de l'appareil (ex: CAISSE 1)" />
+                android:hint="Nom de l'appareil" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -69,7 +69,7 @@
                 android:id="@+id/operator_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Réseau (ex: mixx ou flooz)" />
+                android:hint="Réseau (flooz / mixx)" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -85,15 +85,16 @@
             android:id="@+id/btn_sms_permission"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1. AUTORISER LA LECTURE DES SMS"
+            android:text="AUTORISER LA LECTURE DES SMS"
             android:backgroundTint="#E0E0E0"
             android:textColor="#333333"
             android:layout_marginBottom="8dp"/>
-[30/10/2026 12:42] Abel: <Button
+
+        <Button
             android:id="@+id/btn_battery"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2. DÉSACTIVER L'ÉCONOMIE DE BATTERIE"
+            android:text="DÉSACTIVER L'ÉCONOMIE DE BATTERIE"
             android:backgroundTint="#E0E0E0"
             android:textColor="#333333"
             android:layout_marginBottom="8dp"/>
@@ -102,7 +103,7 @@
             android:id="@+id/btn_autostart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3. DÉMARRAGE AUTOMATIQUE (XIAOMI)"
+            android:text="AUTORISER LE DÉMARRAGE AUTO (XIAOMI)"
             android:backgroundTint="#E0E0E0"
             android:textColor="#333333"
             android:layout_marginBottom="16dp"/>
