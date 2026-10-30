@@ -1,29 +1,112 @@
-package com.example.sampleapp
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-class MainActivity : AppCompatActivity() {
-    private var clickCount = 0
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NYGMA Relais SMS"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"/>
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚠️ En attente de configuration"
+            android:textColor="#FF9800"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"/>
 
-        val welcomeText = findViewById<TextView>(R.id.welcomeText)
-        val clickButton = findViewById<Button>(R.id.clickButton)
-        val countText = findViewById<TextView>(R.id.countText)
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/endpoint_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Adresse du relais (URL)" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        clickButton.setOnClickListener {
-            clickCount++
-            countText.text = "Button clicked $clickCount times"
-            
-            if (clickCount % 5 == 0) {
-                Toast.makeText(this, "Wow! You've clicked $clickCount times!", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-}
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/token_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Jeton de l'appareil" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/device_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom de l'appareil (ex: CAISSE 1)" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/operator_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Réseau (ex: mixx ou flooz)" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ENREGISTRER ET ACTIVER"
+            android:backgroundTint="#1E7E34"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btn_sms_permission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. AUTORISER LA LECTURE DES SMS"
+            android:backgroundTint="#E0E0E0"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btn_battery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. DÉSACTIVER L'ÉCONOMIE DE BATTERIE"
+            android:backgroundTint="#E0E0E0"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btn_autostart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. DÉMARRAGE AUTOMATIQUE (XIAOMI)"
+            android:backgroundTint="#E0E0E0"
+            android:textColor="#333333"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
