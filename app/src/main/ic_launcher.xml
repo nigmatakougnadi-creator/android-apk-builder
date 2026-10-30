@@ -1,0 +1,12 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Fond bleu nuit -->
+    <path android:fillColor="#1E3A8A" android:pathData="M0,0h108v108h-108z"/>
+    <!-- Bulle de message blanche -->
+    <path android:fillColor="#FFFFFF" android:pathData="M54,20 C35.2,20 20,32.5 20,48 C20,57.4 26.5,65.6 36.2,70.6 L30,88 L48.2,77.6 C50,77.9 52,78 54,78 C72.8,78 88,65.5 88,50 C88,32.5 72.8,20 54,20 Z"/>
+    <!-- Éclair vert -->
+    <path android:fillColor="#10B981" android:pathData="M58,30 L38,55 H52 L46,80 L68,50 H54 Z"/>
+</vector>
